@@ -1,11 +1,13 @@
+import Header from "./components/header/header"
 
 
 function App() {
 
   return (
-    <h1 className="p-5 text-8xl bg-PrimaryColor h-screen text-Black font-Gravitica  font-medium">Gravitica</h1>
+    <div className="h-screen bg-PrimaryColor">
+      <Header />
+    </div>
   )
 }
 
 export default App
-// 171717
