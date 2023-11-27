@@ -1,3 +1,4 @@
+import Footer from "./components/footer/footer";
 import Header from "./components/header/Header";
 import NavBar from "./components/navbar/NavBar";
 import { Route, Routes } from "react-router-dom";
@@ -15,6 +16,7 @@ function App() {
         <Route path="journey"></Route>
         <Route path="contact"></Route>
       </Routes>
+      <Footer />
     </div>
   )
 }
