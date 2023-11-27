@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,5 +7,27 @@
 
 @font-face {
   font-family: "Gravitica";
-  src: url("../fonts/ckhans-fonts-gravitica-light-demo.otf");
+  src: url("../fonts/Gravitica-Font/ckhans-fonts-gravitica-light-demo.otf");
 }
+
+@font-face {
+  font-family: "GilroyExtraBold";
+  src:local("GilroyExtraBold") , url("../fonts/Gilroy-Font/Radomir Tinkov - Gilroy-ExtraBold.otf") ;
+}
+
+@font-face {
+  font-family: "GilroyBold";
+  src: local("GilroyBold") ,url("../fonts/Gilroy-Font/Gilroy-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GilroySemiBold";
+  src: local("GilroySemiBold") ,url("../fonts/Gilroy-Font/Gilroy-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GilroyMedium";
+  src: local("GilroyMedium") ,url("../fonts/Gilroy-Font/Gilroy-Medium.ttf") format("truetype");
+}
+
+

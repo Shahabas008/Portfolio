@@ -15,6 +15,7 @@ export default {
       fontFamily: {
         'Urbanist': ['Urbanist', 'sans-serif'],
         'Gravitica': ["Gravitica", "sans-serif"],
+        'Gilroy': ["Gilroy", "sans-serif"],
       },
     },
   },
