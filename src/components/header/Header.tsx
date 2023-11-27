@@ -2,7 +2,7 @@
 const Header = () => {
     return (
         <div>
-            <div className="pl-8 flex justify-between h-[8vh]">
+            <div className=" flex justify-between h-[8vh]">
                 <div className="font-[GilroyBold] tracking-tight text-Black flex items-center text-2xl cursor-pointer">SHAHABAS PARAMBAN</div>
                 <div className="flex items-center bg-Black text-White font-Urbanist tracking-widest pl-8 pr-4 cursor-pointer hover:shadow-xl hover:pl-10 hover:pr-6 transition-all duration-300">
                     HIRE ME
@@ -13,7 +13,7 @@ const Header = () => {
                     </svg>
                 </div>
             </div>
-            <hr className="ml-8" style={{
+            <hr style={{
                 color: '#D5D2D0',
                 height: '1px',
             }} />
