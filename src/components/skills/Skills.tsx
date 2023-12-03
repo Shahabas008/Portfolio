@@ -1,4 +1,7 @@
-
+import Dart from "../../assets/images/dart_image_black.png";
+import Bloc from "../../assets/images/bloc_image.png";
+import Flutter from "../../assets/images/flutter_image_black.png";
+import Hive from "../../assets/images/hive_image_black.png";
 const Skills = () => {
     const skillChangingButton = [
         {
@@ -32,34 +35,61 @@ const Skills = () => {
             </svg>,
         },
     ];
-    function TestingIndex(Index: number) {
-        console.log(Index);
 
-    }
+    const appDevelopmentTechnologies = [
+        {
+            "name": "DART",
+            "image": Dart,
+        },
+        {
+            "name": "FLUTTER",
+            "image": Flutter,
+        },
+        {
+            "name": "BLOC",
+            "image": Bloc,
+        },
+        {
+            "name": "HIVE",
+            "image": Hive,
+        }
+    ];
     return (
         <div>
-            <div className="pt-8 pr-8">
-                <div className="text-TertiaryColor font-[GilroySemiBold] text-9xl">
-                    TECHNOLOGY
+            <div className="pt-8 pr-8 grid grid-cols-4">
+                <div className="col-span-3">
+                    <div className="text-TertiaryColor font-[GilroySemiBold] text-9xl">
+                        TECHNOLOGIES
+                    </div>
+                    <p className="w-[80%] pt-8 text-sm font-[GilroySemiBold] text-SecondaryColor">Explore my technical prowess—a collection of programming languages, frameworks, and tools meticulously crafted for robust applications, websites and stunning web designs. Dive into my skill set, where innovation meets precision in every line of code, shaping digital solutions for tomorrow's world.</p>
+                    <div className="w-[80%] flex mt-8">
+                        {
+                            skillChangingButton.map((Item, Index) => {
+                                return <div key={Index} className="w-full h-12 flex justify-center items-center border bg-Black text-White font-Urbanist tracking-widest cursor-pointer hover:shadow-xl hover:bg-TertiaryColor transition-all duration-300">
+                                    {Item.name} <span className="ml-2">{Item.image}</span>
+                                </div>
+                            })
+                        }
+                    </div>
                 </div>
-                <div className=" text-Black font-[GilroySemiBold] text-6xl">
-                    {/* STACKS */}
-                </div>
-                <p className="w-[55%] pt-8 text-sm font-[GilroySemiBold] text-SecondaryColor">Explore my technical prowess—a collection of programming languages, frameworks, and tools meticulously crafted for robust applications, websites and stunning web designs. Dive into my skill set, where innovation meets precision in every line of code, shaping digital solutions for tomorrow's world.</p>
-                <div className="w-[55%] flex mt-8">
-                    {
-                        skillChangingButton.map((Item, Index) => {
-                            return <div key={Index} onClick={() => {
-                                TestingIndex(Index)
-                            }} className="w-full h-12 flex justify-center items-center border bg-Black text-White font-Urbanist tracking-widest cursor-pointer hover:shadow-xl hover:bg-TertiaryColor transition-all duration-300">
-                                {Item.name} <span className="ml-2">{Item.image}</span>
+                <div>
+                    <div className="h-[80vh] flex items-center justify-center overflow-x-auto">
+                        {appDevelopmentTechnologies.map((item, index) => (
+                            <div key={index} className="flex-shrink-0 flex flex-col items-center justify-center p-4 border border-TertiaryColor rounded-md cursor-pointer hover:rounded-none font-[Urbanist] text-lg shadow-xl hover:shadow-none transition-all duration-300 mr-4">
+                                <div className="flex items-center justify-center">
+                                    <img src={item.image} alt="IMAGE" className="w-32 h-32 object-contain" />
+                                </div>
+                                <span>{item.name}</span>
                             </div>
-                        })
-                    }
+                        ))}
+                    </div>
                 </div>
+
             </div>
         </div>
     )
 }
 
 export default Skills
+
+
