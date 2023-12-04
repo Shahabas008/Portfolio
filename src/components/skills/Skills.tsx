@@ -126,13 +126,13 @@ const Skills = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="h-[80vh] w-[100%] items-center justify-center ">
+                    <div className={`h-[80vh] w-[100%] ${selectedIndex === 2 ? 'pt-[50%]' : null}`}>
                         {technologyCategories.map((item, index) => (
                             <div key={index} className="h-[15vh] w-[55%] mb-8 flex-row items-center justify-center py-5 border border-TertiaryColor rounded-md cursor-pointer hover:rounded-none font-[Urbanist] text-lg shadow-xl hover:shadow-none transition-all duration-300">
                                 <div className="flex items-center justify-center object-contain">
                                     <img src={item.image} alt="IMAGE" className="h-[5vh]" />
                                 </div>
-                                <div className="flex items-center justify-center">
+                                <div className="pt-2 flex items-center justify-center">
                                     {item.name}
                                 </div>
                             </div>
