@@ -15,7 +15,7 @@ const AboutMe = () => {
         {/* image */}
         <div>
           <div className="flex items-center justify-center">
-            <img src={Me} alt="Image" className="w-[95%] flex items-center justify-start " />
+            <img src={Me} alt="Image" className="w-[95%] flex items-center justify-start" />
           </div>
           <p className="absolute bottom-[12%] text-sm text-center font-[GilroySemiBold] text-SecondaryColor pr-8">
             Welcome to my portfolio! I'm a versatile software developer specializing in creating powerful applications, sleek websites, and captivating designs. With a blend of technical expertise and a keen eye for aesthetics, I bring ideas to life with seamless functionality and striking visuals. Explore my portfolio to see how I can turn concepts into impressive digital solutions!
