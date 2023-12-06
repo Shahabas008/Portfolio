@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import NavBar from "./components/navbar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Skills from "./components/skills/Skills";
+import Works from "./components/works/Works";
 
 function App() {
 
@@ -12,9 +13,9 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/about" Component={AboutMe} />
+        <Route path="/" Component={AboutMe} />
         <Route path="/skills" Component={Skills} />
-        <Route path="/works"></Route>
+        <Route path="/works" Component={Works}></Route>
         <Route path="/journey"></Route>
         <Route path="/contact"></Route>
       </Routes>
