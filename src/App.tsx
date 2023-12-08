@@ -5,6 +5,7 @@ import NavBar from "./components/navbar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Skills from "./components/skills/Skills";
 import Works from "./components/works/Works";
+import ContactMe from "./components/contactme/ContactMe";
 
 function App() {
 
@@ -16,8 +17,8 @@ function App() {
         <Route path="/" Component={AboutMe} />
         <Route path="/skills" Component={Skills} />
         <Route path="/works" Component={Works}></Route>
-        <Route path="/journey"></Route>
-        <Route path="/contact"></Route>
+        {/* <Route path="/journey"></Route> */}
+        <Route path="/contact" Component={ContactMe}></Route>
       </Routes>
       <Footer />
     </div>
