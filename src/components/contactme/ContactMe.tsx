@@ -9,14 +9,7 @@ const ContactMe = () => {
                     </div>
                     <p className="pt-8 text-sm font-[GilroySemiBold] text-SecondaryColor">Let's bridge the gap and collaborate! The contact page is your gateway to reaching out directly. Whether you have an exciting project in mind, a collaboration proposal, or simply want to say hello, this is the place to do it.
                         Feel free to drop me a line with your thoughts, inquiries, or any other matter you'd like to discuss. I'm always open to new opportunities, engaging conversations, and building meaningful connections. Looking forward to hearing from you soon!</p>
-                    <div className="w-full ml-[50%] items-center">
-                        <p className="font-[GilroySemiBold] text-2xl">
-                            GOT AN IDEA?
-                        </p>
-                        <div className="w-[10%] h-20 p-8 text-White font-Gravitica rounded-full bg-TertiaryColor animate-bounce">
-                            asdf
-                        </div>
-                    </div>
+                   
                 </div>
                 <div className="p-16">
                     <div className="w-full h-[60vh] border border-TertiaryColor bg-TertiaryColor p-8 shadow-xl hover:shadow-none transition-all duration-300">
