@@ -7,7 +7,9 @@ import Tailwind from "../../assets/images/tailwind_image.png"
 import Node from "../../assets/images/nodejs_image.png"
 import Mongo from "../../assets/images/mongo_image.png"
 import Figma from "../../assets/images/figma_image.png"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const Skills = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -107,40 +109,72 @@ const Skills = () => {
         }
     }
 
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
+    }, [control, inView]);
+
+
     return (
         <div>
             <div className="pt-8 pr-8 grid grid-cols-4">
                 <div className="col-span-3">
-                    <div className="text-TertiaryColor font-[GilroySemiBold] text-9xl">
-                        TECHNOLOGIES
-                    </div>
-                    <p className="w-[80%] pt-8 text-sm font-[GilroySemiBold] text-SecondaryColor">Explore my technical prowess—a collection of programming languages, frameworks, and tools meticulously crafted for robust applications, websites and stunning web designs. Dive into my skill set, where innovation meets precision in every line of code, shaping digital solutions for tomorrow's world.</p>
-                    <div className="w-[80%] flex mt-8">
-                        {
-                            skillChangingButton.map((Item, Index) => {
-                                return <div onClick={() => { changingTechnologyFragment(Index); setSelectedIndex(Index) }} key={Index} className={`w-full h-12 flex justify-center items-center border bg-Black font-Urbanist tracking-widest cursor-pointer hover:px-8 hover:shadow-xl transition-all duration-300 ${Index == selectedIndex ? null : 'hover:bg-TertiaryColor'} ${Index == selectedIndex ? 'bg-PrimaryColor border-Black text-Black' : 'text-White'}`}>
-                                    {Item.name} <span className="ml-2">{Item.image}</span>
-                                </div>
-                            })
-                        }
-                    </div>
+                    <motion.div
+                        animate={{
+                        }}
+                        ref={ref}
+                        style={{
+                            transform: inView ? "none" : "translateX(1.5rem)",
+                            opacity: inView ? 1 : 0,
+                            transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+                        }}>
+                        <div className="text-TertiaryColor font-[GilroySemiBold] text-9xl">
+                            TECHNOLOGIES
+                        </div>
+                        <p className="w-[80%] pt-8 text-sm font-[GilroySemiBold] text-SecondaryColor">Explore my technical prowess—a collection of programming languages, frameworks, and tools meticulously crafted for robust applications, websites and stunning web designs. Dive into my skill set, where innovation meets precision in every line of code, shaping digital solutions for tomorrow's world.</p>
+                        <div className="w-[80%] flex mt-8">
+                            {
+                                skillChangingButton.map((Item, Index) => {
+                                    return <div onClick={() => { changingTechnologyFragment(Index); setSelectedIndex(Index) }} key={Index} className={`w-full h-12 flex justify-center items-center border bg-Black font-Urbanist tracking-widest cursor-pointer hover:px-8 hover:shadow-xl transition-all duration-300 ${Index == selectedIndex ? null : 'hover:bg-TertiaryColor'} ${Index == selectedIndex ? 'bg-PrimaryColor border-Black text-Black' : 'text-White'}`}>
+                                        {Item.name} <span className="ml-2">{Item.image}</span>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </motion.div>
                 </div>
                 <div>
-                    <div className={`h-[80vh] w-[100%] ${selectedIndex === 2 ? 'pt-[50%]' : null}`}>
-                        {technologyCategories.map((item, index) => (
-                            <div key={index} className="h-[15vh] w-[55%] mb-8 flex-row items-center justify-center py-5 border border-TertiaryColor rounded-md hover:rounded-none font-[Urbanist] text-lg shadow-xl hover:shadow-none transition-all duration-300">
-                                <div className="flex items-center justify-center object-contain">
-                                    <img src={item.image} alt="IMAGE" className="h-[5vh]" />
+                    <motion.div
+                        animate={{
+                        }}
+                        ref={ref}
+                        style={{
+                            transform: inView ? "none" : "translateX(1.5rem)",
+                            opacity: inView ? 1 : 0,
+                            transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+                        }}>
+                        <div className={`h-[80vh] w-[100%] ${selectedIndex === 2 ? 'pt-[50%]' : null}`}>
+                            {technologyCategories.map((item, index) => (
+                                <div key={index} className="cursor-default h-[15vh] w-[55%] mb-8 flex-row items-center justify-center py-5 border border-TertiaryColor rounded-md hover:rounded-none font-[Urbanist] text-lg shadow-xl hover:shadow-none transition-all duration-300">
+                                    <div className="flex items-center justify-center object-contain">
+                                        <img src={item.image} alt="IMAGE" className="h-[5vh]" />
+                                    </div>
+                                    <div className="pt-2 flex items-center justify-center">
+                                        {item.name}
+                                    </div>
                                 </div>
-                                <div className="pt-2 flex items-center justify-center">
-                                    {item.name}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    </motion.div>
+
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
