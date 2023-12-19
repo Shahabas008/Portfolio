@@ -8,7 +8,7 @@ import Node from "../../assets/images/nodejs_image.png"
 import Mongo from "../../assets/images/mongo_image.png"
 import Figma from "../../assets/images/figma_image.png"
 import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const Skills = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -150,28 +150,34 @@ const Skills = () => {
                 </div>
                 <div>
                     <motion.div
-                        animate={{
-                        }}
-                        ref={ref}
+                        animate={{}}
                         style={{
-                            transform: inView ? "none" : "translateX(1.5rem)",
-                            opacity: inView ? 1 : 0,
-                            transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-                        }}>
-                        <div className={`h-[80vh] w-[100%] ${selectedIndex === 2 ? 'pt-[50%]' : null}`}>
-                            {technologyCategories.map((item, index) => (
-                                <div key={index} className="cursor-default h-[15vh] w-[55%] mb-8 flex-row items-center justify-center py-5 border border-TertiaryColor rounded-md hover:rounded-none font-[Urbanist] text-lg shadow-xl hover:shadow-none transition-all duration-300">
-                                    <div className="flex items-center justify-center object-contain">
-                                        <img src={item.image} alt="IMAGE" className="h-[5vh]" />
-                                    </div>
-                                    <div className="pt-2 flex items-center justify-center">
-                                        {item.name}
-                                    </div>
-                                </div>
-                            ))}
+                            transform: selectedIndex === 2 ? 'none' : 'translateX(1.5rem)',
+                            opacity: 1,
+                            transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
+                        }}
+                        key={`${selectedIndex}_${technologyCategories.length}`}
+                    >
+                        <div className={`h-[80vh] w-[100%] ${selectedIndex === 2 ? 'pt-[50%] pl-5' : null}`} >
+                            <AnimatePresence>
+                                {technologyCategories.map((item, index) => (
+                                    <motion.div
+                                        key={`${selectedIndex}_${index}`}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 20 }}
+                                        transition={{ duration: 0.5, delay: index * 0.3 }}
+                                        className="cursor-default h-[15vh] w-[55%] mb-8 flex-row items-center justify-center py-5 border border-TertiaryColor rounded-md hover:rounded-none font-[Urbanist] text-lg shadow-xl hover:shadow-none transition-all duration-300"
+                                    >
+                                        <div className="flex items-center justify-center object-contain">
+                                            <img src={item.image} alt="IMAGE" className="h-[5vh]" />
+                                        </div>
+                                        <div className="pt-2 flex items-center justify-center">{item.name}</div>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
                         </div>
                     </motion.div>
-
                 </div>
             </div >
         </div >
