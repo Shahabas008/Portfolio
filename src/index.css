@@ -6,8 +6,28 @@
 
 
 @font-face {
-  font-family: "Gravitica";
-  src: url("../fonts/Gravitica-Font/ckhans-fonts-gravitica-light-demo.otf");
+  font-family: "cabinetBlack";
+  src: url("../fonts/Cabinet-Font/CabinetGrotesk-Black.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "cabinetBold";
+  src: url("../fonts/Cabinet-Font/CabinetGrotesk-Bold.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "cabinetExtrabold";
+  src: url("../fonts/Cabinet-Font/CabinetGrotesk-Extrabold.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "cabinetMedium";
+  src: url("../fonts/Cabinet-Font/CabinetGrotesk-Medium.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "cabinetRegular";
+  src: url("../fonts/Cabinet-Font/CabinetGrotesk-Regular.ttf")  format("truetype");
 }
 
 @font-face {
