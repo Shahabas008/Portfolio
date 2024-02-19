@@ -1,9 +1,9 @@
-import NavBar from "../Regular components/NavBar"
+import NavBar from "../Regular components/Navbar/NavBar"
 import MainHeroComponent from "./components/MainHeroComponent"
 
 const Home = () => {
     return (
-        <div className="bg-SecondaryColor h-screen">
+        <div className="bg-SecondaryColor">
             <NavBar />
             <MainHeroComponent />
         </div>

@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
-import Logo from "../../assets/images/logo.svg";
-
+import Logo from "../../../assets/images/logo.svg";
 import { useClickAway } from "react-use";
 import { useRef } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
-import { routes } from "./Navbar/routes";
+import { routes } from "./routes";
 
 
 const NavBar = () => {
@@ -18,10 +17,10 @@ const NavBar = () => {
         <div className="bg-SecondaryColor px-[5%] py-[2%] flex items-center justify-between">
 
             {/* Logo Image */}
-            <img src={Logo} width={30} alt="Logo" />
+            <img src={Logo} alt="Logo" className="h-[10vh]" />
 
             {/* NavLinks */}
-            <div className="hidden lg:block lg:ml-[50vh] lg:w-[60vh] flex justify-between items-center">
+            <div className="hidden lg:flex lg:ml-[35%] lg:w-[60vh] justify-between items-center">
                 <NavLink to="/" className="text-[16px] font-[cabinetBold] aria-[current=page]:text-PrimaryColor aria-[current=page]:underline underline aria-[current=page]:underline-offset-[16px] hover:-translate-y-2 duration-500">Home</NavLink>
                 <NavLink to="/Services" className="text-[16px] font-[cabinetBold] aria-[current=page]:text-PrimaryColor aria-[current=page]:underline aria-[current=page]:underline-offset-[16px] text-TertiaryColor hover:-translate-y-2 duration-500">Services</NavLink>
                 <NavLink to="/Works" className="text-[16px] font-[cabinetBold] aria-[current=page]:text-PrimaryColor aria-[current=page]:underline aria-[current=page]:underline-offset-[16px] text-TertiaryColor hover:-translate-y-2 duration-500">Works</NavLink>
@@ -40,13 +39,13 @@ const NavBar = () => {
                     {isOpen && (
                         <motion.div
                             initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                            animate={{ opacity: 3 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="bg-PrimaryColor fixed left-0 shadow-4xl right-0 top-[15vh] p-5 pt-0 bg-neutral-950 border-b border-b-white/20"
+                            className="bg-SecondaryColor fixed left-0 shadow-4xl right-0 top-[15vh] p-5 pt-0 bg-neutral-950"
                         >
                             <ul className="grid gap-2">
-                                {routes.map((route, idx) => {
+                                {routes.map((route: any, idx) => {
                                     return (
                                         <motion.li
                                             initial={{ scale: 0, opacity: 0 }}
@@ -54,21 +53,25 @@ const NavBar = () => {
                                             transition={{
                                                 type: "spring",
                                                 stiffness: 260,
-                                                damping: 20,
-                                                delay: 0.1 + idx / 10,
+                                                damping: 30,
+                                                delay: 0.1 + idx / 5,
                                             }}
                                             key={route.title}
                                             className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
                                         >
                                             <a
-                                                onClick={() => setOpen((prev) => !prev)}
+                                                onClick={() => {
+                                                    setOpen((prev) => !prev)
+                                                }}
                                                 className={
                                                     "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"
                                                 }
                                                 href={route.href}
                                             >
-                                                <span className="flex gap-1 text-lg">{route.title}</span>
+                                                <span className="flex gap-1 text-[32px] text-PrimaryColor font-[cabinetBold] ">{route.title}</span>
+                                                <img src={route.Icon} alt="" className="mr-[15%] " />
                                             </a>
+                                            <hr className="text-PrimaryColor" />
                                         </motion.li>
                                     );
                                 })}
