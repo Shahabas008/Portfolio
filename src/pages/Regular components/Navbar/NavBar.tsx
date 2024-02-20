@@ -79,9 +79,9 @@ const NavBar = () => {
                                 <div className="px-[20%] mt-[10%]">
                                     <div className=" border-2 text-center md:px-[24px] md:py-[12px] border-PrimaryColor rounded-[50px] font-[GilroySemiBold] text-[16px] text-PrimaryColor cursor-pointer hover:bg-PrimaryColor hover:text-White transition-colors duration-500">HIRE US</div>
                                 </div>
-                                <div className="mt-[2%] flex items-center justify-center">
+                                <div className="mt-[10%] flex items-center justify-center">
                                     <a href="https://www.instagram.com/_copy.and.paste/" target="_blank">
-                                        <img src={Insta} width={"80%"} alt="Social media icons" className="cursor-pointer" />
+                                        <img src={Insta} width={"50%"} alt="Social media icons" className="cursor-pointer" />
                                     </a>
                                     <div className="text-center  font-[cabinetBold] text-[12px] text-Black tracking-widest ">
                                         Copy&paste

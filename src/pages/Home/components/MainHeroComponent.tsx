@@ -99,7 +99,7 @@ const MainHeroComponent = () => {
           </div>
 
           {/* social Media icons */}
-          <div className=" flex items-center justify-start mt-[8%] xl:pl-[5%] ml-[3%] lg:ml-[12%] xl:ml-[0%]">
+          <div className=" flex items-center justify-start mt-[8%]  xl:pl-[5%] ml-[5%] lg:ml-[12%] xl:ml-[0%]">
             {socialMediaIcons.map((items: any, index: number) => {
               return (
                 <div key={index} className="mr-[2%]">
@@ -112,7 +112,7 @@ const MainHeroComponent = () => {
           </div>
 
           {/* Paragraph */}
-          <div className="px-[3%] lg:px-[0] grid grid-cols-6 mt-[5%] lg:mt-[2%] lg:ml-[12%] xl:pl-[5%] xl:ml-[0%]">
+          <div className="px-[5%] lg:px-[0] grid grid-cols-6 mt-[5%] lg:mt-[2%] lg:ml-[12%] xl:pl-[5%] xl:ml-[0%]">
             <div className="col-span-5 lg:flex-none flex justify-center lg:justify-start lg:col-span-0 text-[16px] text-left font-[GilroyMedium] text-Black leading-[20px] ">
               Achieved a 100% success rate on 20+ software projects, demonstrating my expertise our web and application development.
             </div>
