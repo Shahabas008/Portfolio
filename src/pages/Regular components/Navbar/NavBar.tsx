@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { routes } from "./routes";
+import Insta from "../../../assets/images/insta_ic.svg";
 
 
 const NavBar = () => {
@@ -14,10 +15,10 @@ const NavBar = () => {
 
     useClickAway(ref, () => setOpen(false));
     return (
-        <div className="bg-SecondaryColor px-[5%] py-[2%] flex items-center justify-between">
+        <div className="sticky top-0 z-50 bg-SecondaryColor px-[5%] py-[2%] flex items-center justify-between">
 
             {/* Logo Image */}
-            <img src={Logo} alt="Logo" className="h-[10vh]" />
+            <img src={Logo} alt="Logo" className="h-[8vh]" />
 
             {/* NavLinks */}
             <div className="hidden lg:flex lg:ml-[35%] lg:w-[60vh] justify-between items-center">
@@ -39,16 +40,16 @@ const NavBar = () => {
                     {isOpen && (
                         <motion.div
                             initial={{ opacity: 0 }}
-                            animate={{ opacity: 3 }}
+                            animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="bg-SecondaryColor fixed left-0 shadow-4xl right-0 top-[15vh] p-5 pt-0 bg-neutral-950"
+                            className="bg-SecondaryColor h-screen fixed left-0 shadow-4xl right-0 top-[10vh] "
                         >
-                            <ul className="grid gap-2">
+                            <ul className="grid gap-2 p-5 pt-0">
                                 {routes.map((route: any, idx) => {
                                     return (
                                         <motion.li
-                                            initial={{ scale: 0, opacity: 0 }}
+                                            initial={{ scale: 5, opacity: 0 }}
                                             animate={{ scale: 1, opacity: 1 }}
                                             transition={{
                                                 type: "spring",
@@ -71,10 +72,21 @@ const NavBar = () => {
                                                 <span className="flex gap-1 text-[32px] text-PrimaryColor font-[cabinetBold] ">{route.title}</span>
                                                 <img src={route.Icon} alt="" className="mr-[15%] " />
                                             </a>
-                                            <hr className="text-PrimaryColor" />
+                                            <hr className="text-PrimaryColor p-0" />
                                         </motion.li>
                                     );
                                 })}
+                                <div className="px-[20%] mt-[10%]">
+                                    <div className=" border-2 text-center md:px-[24px] md:py-[12px] border-PrimaryColor rounded-[50px] font-[GilroySemiBold] text-[16px] text-PrimaryColor cursor-pointer hover:bg-PrimaryColor hover:text-White transition-colors duration-500">HIRE US</div>
+                                </div>
+                                <div className="mt-[2%] flex items-center justify-center">
+                                    <a href="https://www.instagram.com/_copy.and.paste/" target="_blank">
+                                        <img src={Insta} width={"80%"} alt="Social media icons" className="cursor-pointer" />
+                                    </a>
+                                    <div className="text-center  font-[cabinetBold] text-[12px] text-Black tracking-widest ">
+                                        Copy&paste
+                                    </div>
+                                </div>
                             </ul>
                         </motion.div>
                     )}
